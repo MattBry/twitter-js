@@ -33,14 +33,6 @@ var getFakeTweet = function() {
 };
 
 for(var i=0; i<10; i++) {
-  //module.exports.add( getFakeName(), getFakeTweet() );
+module.exports.add( getFakeName(), getFakeTweet() );
 
 }
-console.log(data);
-module.exports.add('Matt','I am so cool.');
-module.exports.find({name:'Matt'});
-
-
-
-
-console.log(data);
