@@ -12,10 +12,18 @@
       100 followers
     </div>
     <div class="col-md-9">
+    <h2>{{title}}</h2>
     
       <!-- display tweets here -->
       {% for tweet in tweets %}
-        <li>{{tweet.text}}</li>
+        <img class = "dino" src="http://images.clipartpanda.com/cute-dinosaur-clipart-2134374-stegosaurus-dinosaur-vector-illustration.jpg">
+
+        <p id="name"><strong><a href="/users/{{tweet.name}}">{{tweet.name}}</a></strong></p>
+
+
+        <p><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.text}}</a></p>
+
+       
       {% endfor %}
       
     </div>

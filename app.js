@@ -23,7 +23,7 @@ app.set('views', __dirname + '/views');
 swig.setDefaults({cache: false});
 
 app.use(function(req, res, next) {
-  console.log(req.path)
+  
   var mimeType = mime.lookup(req.path)
   fs.readFile('./public/' + req.path, function(err, fileBuffer) {
     if(err) return next()

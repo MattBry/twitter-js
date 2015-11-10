@@ -3,7 +3,8 @@ var _ = require('underscore');
 var data = [];
 
 var add = function (name, text) {
-  data.push({ name: name, text: text });
+	var id = Math.random().toString().slice(-3);
+  data.push({ name: name, text: text, id: id });
 };
 
 var list = function () {
