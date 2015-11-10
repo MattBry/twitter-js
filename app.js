@@ -1,5 +1,17 @@
 var express = require('express');
 var app = express();
+var swig = require('swig');
+
+var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+
+
+app.engine('html', swig.renderFile);
+
+app.set('view engine', 'html');
+
+app.set('views', __dirname + '/views');
+
+swig.setDefaults({cache: false});
 
 app.use(function(request, response, next){
 	console.log(request.method + " " + request.url + " " + response.statusCode);
@@ -7,7 +19,7 @@ app.use(function(request, response, next){
 });
 
 app.get("/", function(request, response){
-	response.send("welcome to the page");
+	response.render( 'index', {title: 'Hall of Fame', people: people} );
 });
 
 app.get("/news", function(request, response){
